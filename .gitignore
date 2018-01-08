@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 obj
 api.userprefs
 WebApi.csproj.user
 bin
+=======
+bin
+api.userprefs
+WebApi.csproj.user
+obj
+>>>>>>> 9d92a4a288f4f184ccb4b20565d90c93a7816258
