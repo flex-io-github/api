@@ -23,7 +23,7 @@ namespace WebApi
         [HttpGet]
         public IEnumerable<employee> Get()
         {
-            return dbContext.employees;
+            return dbContext.employees.ToList();
         }
 
         // GET api/values/5
@@ -49,6 +49,13 @@ namespace WebApi
             var entity = dbContext.employees.Where(t => t.id == id).FirstOrDefault();
             entity.given_name = value.given_name;
             entity.surname = value.surname;
+            entity.code = value.code;
+            entity.email_address = value.email_address;
+            entity.mobile_number = value.mobile_number;
+            entity.other_given_name = value.other_given_name;
+            entity.prefix = value.prefix;
+            entity.suffix = value.suffix;
+            entity.data_of_birth = value.data_of_birth;
             dbContext.SaveChanges();
             return entity;
         }

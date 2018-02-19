@@ -8,6 +8,7 @@ namespace WebApi.Dtos
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Username { get; set; }
+        public string employee_id { get; set; }
 
         //[StringLength(100, ErrorMessage = "PASSWORD_MIN_LENGTH", MinimumLength = 6)]
         public string Password { get; set; }

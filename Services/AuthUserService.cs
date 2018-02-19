@@ -105,6 +105,7 @@ namespace WebApi.Services
             //user.GivenName = userParam.GivenName;
             //user.Surname = userParam.Surname;
             user.username = userParam.username;
+            user.employee_id = userParam.employee_id;
 
             // update password if it was entered
             if (!string.IsNullOrWhiteSpace(password))
