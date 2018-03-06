@@ -34,10 +34,12 @@ namespace WebApi.Entities
         public DbSet<Entities.auth_user> auth_users { get; set; }
         public DbSet<Entities.auth_user_role> auth_user_roles { get; set; }
         public DbSet<Entities.Lookup> Lookups { get; set; }
+        public DbSet<Entities.file_manager> file_manager { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder){
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.Entity<employee>().ToTable("employees");
-           
+
         }
     }
 }
