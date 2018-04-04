@@ -36,6 +36,7 @@ namespace WebApi.Entities
         public DbSet<Entities.Lookup> Lookups { get; set; }
         public DbSet<Entities.file_manager> file_manager { get; set; }
         public DbSet<Entities.employee_status> employee_status { get; set; }
+        public DbSet<Entities.positions> positions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
