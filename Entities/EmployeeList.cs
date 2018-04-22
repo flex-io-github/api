@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApi.Entities
 {
-    public class employee
+    public class EmployeeList
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id{ get; set; }
+        public int id { get; set; }
 
         //[Required]
         public string employee_code { get; set; }
@@ -15,10 +15,10 @@ namespace WebApi.Entities
         //[Required]
         public string first_name { get; set; }
 
-        public string middle_name { get; set; }
-
         //[Required]
         public string last_name { get; set; }
+
+        public string middle_name { get; set; }
 
         public string prefix { get; set; }
 
@@ -31,34 +31,22 @@ namespace WebApi.Entities
 
         //[EmailAddress]
         public string email_address { get; set; }
-       
+
         public DateTime date_of_birth { get; set; }
 
-        public int gender_id { get; set; }
+        public string gender { get; set; }
 
-        public int work_type_id { get; set; }
+        public string work_type { get; set; }
 
-        public int employee_status_id { get; set; }
-
-        public int company_id { get; set; }
-
-        public int bank_id { get; set; }
-
-        public int tin { get; set; }
-
-        public int telephone_number { get; set; }
-
-        public int rdo_id { get; set; }
-
-        public int position_id { get; set; }
+        public string employee_status { get; set; }
 
         //[Required]
-        public int created_by_id { get; set; }
+        public string created_by { get; set; }
 
         //[Required]
         public DateTime date_created { get; set; }
 
-        public int modified_by_id { get; set; }
+        public string modified_by { get; set; }
 
         public DateTime date_modified { get; set; }
     }

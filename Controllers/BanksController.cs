@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,23 +10,23 @@ using WebApi.Interfaces;
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
-    public class PositionController : Controller
+    public class BanksController : Controller
     {
         Entities.DataContext dbContext;
-        public PositionController(Entities.DataContext dbContext) => this.dbContext = dbContext;
+        public BanksController(Entities.DataContext dbContext) => this.dbContext = dbContext;
 
-        //GET: api/positions
+        //GET: api/banks
        [HttpGet]
-        public IEnumerable<positions> Get()
+        public IEnumerable<banks> Get()
         {
-            return dbContext.positions.ToList();
+            return dbContext.banks.ToList();
 
         }
 
         [HttpGet("LookUp")]
         public dynamic GetLookup()
         {
-            return dbContext.positions.Where(x => x.is_active == true)
+            return dbContext.banks.Where(x => x.active == true)
               .Select(x => new
               {
                   key = x.id,
@@ -34,40 +34,40 @@ namespace WebApi.Controllers
               }).ToList();
         }
 
-        // GET: api/positions/5
+        // GET: api/banks/5
         [HttpGet("{id}")]
-        public positions Get(int id)
+        public banks Get(int id)
         {
-            return dbContext.positions.Where(t => t.id == id).FirstOrDefault();
+            return dbContext.banks.Where(t => t.id == id).FirstOrDefault();
         }
 
-        // POST: api/positions
+        // POST: api/banks
         [HttpPost]
-        public positions Post([FromBody]positions value)
+        public banks Post([FromBody]banks value)
         {
-            dbContext.positions.Add(value);
+            dbContext.banks.Add(value);
             dbContext.SaveChanges();
             return value;
         }
 
-        // PUT: api/positions/5
+        // PUT: api/banks/5
         [HttpPut("{id}")]
-        public positions Put(int id, [FromBody]positions value)
+        public banks Put(int id, [FromBody]banks value)
         {
-            var entity = dbContext.positions.Where(t => t.id == id).FirstOrDefault();
+            var entity = dbContext.banks.Where(t => t.id == id).FirstOrDefault();
             entity.display = value.display;
             entity.name = value.name;
-            entity.is_active = value.is_active;
+            entity.active = value.active;
             dbContext.SaveChanges();
             return entity;
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public positions Delete(int id)
+        public banks Delete(int id)
         {
-            var entity = dbContext.positions.Where(t => t.id == id).FirstOrDefault();
-            dbContext.positions.Remove(entity);
+            var entity = dbContext.banks.Where(t => t.id == id).FirstOrDefault();
+            dbContext.banks.Remove(entity);
             dbContext.SaveChanges();
             return entity;
         }

@@ -37,6 +37,12 @@ namespace WebApi.Entities
         public DbSet<Entities.file_manager> file_manager { get; set; }
         public DbSet<Entities.employee_status> employee_status { get; set; }
         public DbSet<Entities.positions> positions { get; set; }
+		public DbSet<Entities.banks> banks { get; set; }
+		public DbSet<Entities.company> company { get; set; }
+		public DbSet<Entities.company_addresses> company_addresses { get; set; }
+		public DbSet<Entities.employee_addresses> employee_addresses { get; set; }
+		public DbSet<Entities.municipality> municipality { get; set; }
+		public DbSet<Entities.rdo> rdo { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

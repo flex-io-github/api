@@ -9,10 +9,18 @@ namespace WebApi.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
-        public string code { get; set; }
+        public string display { get; set; }
 
         public string name { get; set; }
 
-        public bool active { get; set; }
+        public bool is_active { get; set; }
+		
+        public int created_by_id { get; set; }
+		
+        public DateTime date_created { get; set; }
+		
+        public int modified_by_id { get; set; }
+		
+        public DateTime date_modified { get; set; }
     }
 }

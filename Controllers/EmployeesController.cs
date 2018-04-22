@@ -20,10 +20,42 @@ namespace WebApi
         public EmployeesController(Entities.DataContext dbContext) => this.dbContext = dbContext;
         // GET: api/values
 
+        //[HttpGet]
+        //public IEnumerable<employee> Get()
+        //{
+        //    return dbContext.employees.ToList();
+        //}
+
         [HttpGet]
-        public IEnumerable<employee> Get()
+        public IEnumerable<EmployeeList> Get()
         {
-            return dbContext.employees.ToList();
+            
+            var query = from x in dbContext.employees
+                join y in dbContext.employee_status on x.employee_status_id equals y.id into z
+                from sublist in z.DefaultIfEmpty()
+                select new EmployeeList
+                {
+                    id = x.id,
+                    employee_code = x.employee_code,
+                    first_name = x.first_name,
+                    last_name = x.last_name,
+                    middle_name = x.middle_name,
+                    prefix = x.prefix,
+                    suffix = x.suffix,
+                    tfn = x.tfn,
+                    mobile_number = x.mobile_number,
+                    email_address = x.email_address,
+                    date_of_birth = x.date_of_birth,
+                    gender = x.gender_id == 0 ? String.Empty : (x.gender_id == 1 ? "Male" : "Female"),
+                    work_type = "",
+                    employee_status = sublist == null ? String.Empty : (sublist.display ?? String.Empty),
+                    created_by = x.employee_code,
+                    date_created = x.date_created,
+                    modified_by = x.employee_code,
+                    date_modified = x.date_modified,
+                };
+
+            return query.OrderBy(x => x.employee_code);
         }
 
         // GET api/values/5
@@ -47,15 +79,25 @@ namespace WebApi
         public employee Put(int id, [FromBody]employee value)
         {
             var entity = dbContext.employees.Where(t => t.id == id).FirstOrDefault();
-            entity.given_name = value.given_name;
-            entity.surname = value.surname;
-            entity.code = value.code;
+            entity.employee_code = value.employee_code;
+            entity.first_name = value.first_name;
+			entity.middle_name = value.middle_name;
+            entity.last_name = value.last_name;
             entity.email_address = value.email_address;
             entity.mobile_number = value.mobile_number;
-            entity.other_given_name = value.other_given_name;
             entity.prefix = value.prefix;
             entity.suffix = value.suffix;
-            entity.data_of_birth = value.data_of_birth;
+            entity.date_of_birth = value.date_of_birth;
+            entity.gender_id = value.gender_id;
+            entity.employee_status_id = value.employee_status_id;
+            entity.work_type_id = value.work_type_id;
+            entity.tfn = value.tfn;
+            entity.company_id = value.company_id;
+            entity.bank_id = value.bank_id;
+            entity.tin = value.tin;
+            entity.telephone_number = value.telephone_number;
+            entity.rdo_id = value.rdo_id;
+            entity.position_id = value.position_id;
             dbContext.SaveChanges();
             return entity;
         }

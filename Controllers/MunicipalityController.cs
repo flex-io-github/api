@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,23 +11,23 @@ using WebApi.Interfaces;
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
-    public class EmployeeStatusController : Controller
+    public class MunicipalityController : Controller
     {
         Entities.DataContext dbContext;
 
-        public EmployeeStatusController(Entities.DataContext dbContext) => this.dbContext = dbContext;
+        public MunicipalityController(Entities.DataContext dbContext) => this.dbContext = dbContext;
         
-        // GET: api/EmployeeStatus
+        // GET: api/municipality
         [HttpGet]
-        public IEnumerable<employee_status> Get()
+        public IEnumerable<municipality> Get()
         {
-            return dbContext.employee_status.ToList();
+            return dbContext.municipality.ToList();
         }
 
         [HttpGet("LookUp")]
         public dynamic GetLookup()
         {
-            return dbContext.employee_status.Where(x => x.is_active == true)
+            return dbContext.municipality.Where(x => x.is_active == true)
               .Select(x => new
               {
                   key = x.id,
@@ -35,27 +35,27 @@ namespace WebApi.Controllers
               }).ToList();
         }
 
-        // GET: api/EmployeeStatus/5
+        // GET: api/municipality/5
         [HttpGet("{id}")]
-        public employee_status Get(int id)
+        public municipality Get(int id)
         {
-            return dbContext.employee_status.Where(t => t.id == id).FirstOrDefault();
+            return dbContext.municipality.Where(t => t.id == id).FirstOrDefault();
         }
         
-        // POST: api/EmployeeStatus
+        // POST: api/municipality
         [HttpPost]
-        public employee_status Post([FromBody]employee_status value)
+        public municipality Post([FromBody]municipality value)
         {
-            dbContext.employee_status.Add(value);
+            dbContext.municipality.Add(value);
             dbContext.SaveChanges();
             return value;
         }
         
-        // PUT: api/EmployeeStatus/5
+        // PUT: api/municipality/5
         [HttpPut("{id}")]
-        public employee_status Put(int id, [FromBody]employee_status value)
+        public municipality Put(int id, [FromBody]municipality value)
         {
-            var entity = dbContext.employee_status.Where(t => t.id == id).FirstOrDefault();
+            var entity = dbContext.municipality.Where(t => t.id == id).FirstOrDefault();
             entity.display = value.display;
             entity.name = value.name;
             entity.is_active = value.is_active;
@@ -65,10 +65,10 @@ namespace WebApi.Controllers
         
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public employee_status Delete(int id)
+        public municipality Delete(int id)
         {
-            var entity = dbContext.employee_status.Where(t => t.id == id).FirstOrDefault();
-            dbContext.employee_status.Remove(entity);
+            var entity = dbContext.municipality.Where(t => t.id == id).FirstOrDefault();
+            dbContext.municipality.Remove(entity);
             dbContext.SaveChanges();
             return entity;
         }
