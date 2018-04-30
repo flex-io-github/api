@@ -43,6 +43,9 @@ namespace WebApi.Entities
 		public DbSet<Entities.employee_addresses> employee_addresses { get; set; }
 		public DbSet<Entities.municipality> municipality { get; set; }
 		public DbSet<Entities.rdo> rdo { get; set; }
+		public DbSet<Entities.alphanumeric_tax_codes> alphanumeric_tax_codes { get; set; }
+		public DbSet<Entities.employee_dependents> employee_dependents { get; set; }
+		public DbSet<Entities.employee_spouse> employee_spouse { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

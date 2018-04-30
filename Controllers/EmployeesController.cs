@@ -98,6 +98,9 @@ namespace WebApi
             entity.telephone_number = value.telephone_number;
             entity.rdo_id = value.rdo_id;
             entity.position_id = value.position_id;
+            entity.alphanumeric_tax_code_id = value.alphanumeric_tax_code_id;
+            entity.civil_status_id = value.civil_status_id;
+            entity.employee_spouse_id = value.employee_spouse_id;
             dbContext.SaveChanges();
             return entity;
         }

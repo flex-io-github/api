@@ -51,6 +51,12 @@ namespace WebApi.Entities
         public int rdo_id { get; set; }
 
         public int position_id { get; set; }
+		
+        public int alphanumeric_tax_code_id { get; set; }
+		
+        public int civil_status_id { get; set; }
+		
+        public int employee_spouse_id { get; set; }
 
         //[Required]
         public int created_by_id { get; set; }
