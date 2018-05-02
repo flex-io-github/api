@@ -57,6 +57,7 @@ namespace WebApi.Controllers
             var entity = dbContext.alphanumeric_tax_codes.Where(t => t.id == id).FirstOrDefault();
             entity.display = value.display;
             entity.name = value.name;
+			entity.rate = value.rate;
 			entity.is_ewt = value.is_ewt;
 			entity.is_fb_tax = value.is_fb_tax;
 			entity.is_final_tax = value.is_final_tax;

@@ -13,6 +13,8 @@ namespace WebApi.Entities
 
         public string name { get; set; }
 		
+		public float rate { get; set; }
+		
 		public bool is_ewt { get; set; }
 		
 		public bool is_fb_tax { get; set; }

@@ -22,7 +22,7 @@ namespace WebApi.Entities
 
         public string prefix { get; set; }
 
-        public string suffix { get; set; }
+        public int suffix_id { get; set; }
 
         public string tfn { get; set; }
 
@@ -57,6 +57,20 @@ namespace WebApi.Entities
         public int civil_status_id { get; set; }
 		
         public int employee_spouse_id { get; set; }
+		
+		public string nickname { get; set; }
+		
+		public string place_of_birth { get; set; }
+		
+		public string mothers_maiden_name { get; set; }
+		
+		public string fathers_name { get; set; }
+		
+		public int citizenship_id { get; set; }
+		
+		public string mobile_number { get; set; }
+		
+		public string fax_number { get; set; }
 
         //[Required]
         public int created_by_id { get; set; }

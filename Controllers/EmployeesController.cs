@@ -86,7 +86,8 @@ namespace WebApi
             entity.email_address = value.email_address;
             entity.mobile_number = value.mobile_number;
             entity.prefix = value.prefix;
-            entity.suffix = value.suffix;
+            entity.suffix_id = value.suffix_id;
+			entity.nickname = value.nickname;
             entity.date_of_birth = value.date_of_birth;
             entity.gender_id = value.gender_id;
             entity.employee_status_id = value.employee_status_id;
@@ -101,6 +102,13 @@ namespace WebApi
             entity.alphanumeric_tax_code_id = value.alphanumeric_tax_code_id;
             entity.civil_status_id = value.civil_status_id;
             entity.employee_spouse_id = value.employee_spouse_id;
+			entity.place_of_birth = value.place_of_birth;
+			entity.mothers_maiden_name = value.mothers_maiden_name;
+			entity.fathers_name = value.fathers_name;
+			entity.citizenship_id = value.citizenship_id;
+			entity.mobile_number = value.mobile_number;
+			entity.fax_number = value.fax_number;
+
             dbContext.SaveChanges();
             return entity;
         }
