@@ -96,6 +96,10 @@ namespace WebApi
             entity.company_id = value.company_id;
             entity.bank_id = value.bank_id;
             entity.tin = value.tin;
+			entity.hdmf_id = value.hdmf_id;
+			entity.pag-ibig_number = value.pag-ibig_number;
+			entity.sss_number = value.sss_number;
+			entity.phic_number = value.phic_number;
             entity.telephone_number = value.telephone_number;
             entity.rdo_id = value.rdo_id;
             entity.position_id = value.position_id;
@@ -108,7 +112,16 @@ namespace WebApi
 			entity.citizenship_id = value.citizenship_id;
 			entity.mobile_number = value.mobile_number;
 			entity.fax_number = value.fax_number;
-
+			entity.employment_type_id = value.employment_type_id;
+			entity.department_id = value.department_id;
+			entity.cost_center_id = value.cost_center_id;
+			entity.location_id = value.location_id;
+			entity.supervisor_id = value.supervisor_id;
+			entity.is_active = value.is_active;
+			entity.is_union = value.is_union;
+			entity.pay_group_id = value.pay_group_id;
+			entity.payment_type_id = value.payment_type_id;
+			entity.payroll_frequency_id = value.payroll_frequency_id;
             dbContext.SaveChanges();
             return entity;
         }

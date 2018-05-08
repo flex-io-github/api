@@ -11,7 +11,11 @@ namespace WebApi.Entities
         public string display { get; set; }
         public string register_name { get; set; }
         public string telephone_number { get; set; }
+        public string cellphone_number { get; set; }
         public string tin { get; set; }
+        public string sss_number { get; set; }
+        public string phic_number { get; set; }
+        public string hdmf_number { get; set; }
         public int rdo_id { get; set; }
         public string line_of_business { get; set; }
         public int bank_id { get; set; }

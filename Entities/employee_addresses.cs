@@ -19,6 +19,7 @@ namespace WebApi.Entities
 		public int municipality_id { get; set; }
 		public string city_province { get; set; }
 		public int address_type_id { get; set; }
+		public string zip_code { get; set; }
         public int created_by_id { get; set; }
         public DateTime date_created { get; set; }
         public int modified_by_id { get; set; }

@@ -8,6 +8,8 @@ namespace WebApi.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id{ get; set; }
+		
+        public int company_id { get; set; }
 
         //[Required]
         public string employee_code { get; set; }
@@ -40,11 +42,17 @@ namespace WebApi.Entities
 
         public int employee_status_id { get; set; }
 
-        public int company_id { get; set; }
-
         public int bank_id { get; set; }
 
-        public int tin { get; set; }
+        public string tin { get; set; }
+		
+		public string hdmf_id { get; set; }
+		
+		public string pag-ibig_number { get; set; }
+		
+		public string sss_number { get; set; }
+		
+		public string phic_number { get; set; }
 
         public int telephone_number { get; set; }
 
@@ -71,6 +79,26 @@ namespace WebApi.Entities
 		public string mobile_number { get; set; }
 		
 		public string fax_number { get; set; }
+		
+		public int employment_type_id { get; set; }
+		
+		public int department_id { get; set; }
+		
+		public int cost_center_id { get; set; }
+		
+		public int location_id { get; set; }
+		
+		public int supervisor_id { get; set; }
+		
+		public bool is_active { get; set; }
+		
+		public bool is_union { get; set; }
+		
+		public int pay_group_id { get; set; }
+		
+		public int payment_type_id { get; set; }
+		
+		public int payroll_frequency_id { get; set; }
 
         //[Required]
         public int created_by_id { get; set; }

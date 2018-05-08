@@ -51,6 +51,14 @@ namespace WebApi.Entities
 		public DbSet<Entities.suffix> suffix { get; set; }
 		public DbSet<Entities.citizenships> citizenships { get; set; }
 		public DbSet<Entities.employee_identifications> employee_identifications { get; set; }
+		public DbSet<Entities.employment_types> employment_types { get; set; }
+		public DbSet<Entities.departments> departments { get; set; }
+		public DbSet<Entities.cost_centers> cost_centers { get; set; }
+		public DbSet<Entities.locations> locations { get; set; }
+		public DbSet<Entities.tax_codes> tax_codes { get; set; }
+		public DbSet<Entities.pay_groups> pay_groups { get; set; }
+		public DbSet<Entities.payment_types> payment_types { get; set; }
+		public DbSet<Entities.payroll_frequencies> payroll_frequencies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

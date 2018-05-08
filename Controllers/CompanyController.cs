@@ -47,7 +47,11 @@ namespace WebApi.Controllers
             entity.display = value.display;
             entity.register_name = value.register_name;
             entity.telephone_number = value.telephone_number;
+            entity.cellphone_number = value.cellphone_number;
             entity.tin = value.tin;
+			entity.sss_number = value.sss_number;
+			entity.phic_number = value.phic_number;
+			entity.hdmf_number = value.hdmf_number;
             entity.rdo_id = value.rdo_id;
             entity.line_of_business = value.line_of_business;
             entity.bank_id = value.bank_id;

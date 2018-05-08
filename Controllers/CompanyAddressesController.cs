@@ -54,6 +54,7 @@ namespace WebApi.Controllers
 			entity.municipality_id = value.municipality_id;
 			entity.city_province = value.city_province;
 			entity.address_type_id = value.address_type_id;
+			entity.zip_code = value.zip_code;
             dbContext.SaveChanges();
             return entity;
         }
