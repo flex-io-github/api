@@ -48,7 +48,7 @@ namespace WebApi.Entities
 		
 		public string hdmf_id { get; set; }
 		
-		public string pag-ibig_number { get; set; }
+		public string pag_ibig_number { get; set; }
 		
 		public string sss_number { get; set; }
 		
@@ -75,8 +75,6 @@ namespace WebApi.Entities
 		public string fathers_name { get; set; }
 		
 		public int citizenship_id { get; set; }
-		
-		public string mobile_number { get; set; }
 		
 		public string fax_number { get; set; }
 		

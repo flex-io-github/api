@@ -41,7 +41,6 @@ namespace WebApi
                     last_name = x.last_name,
                     middle_name = x.middle_name,
                     prefix = x.prefix,
-                    suffix = x.suffix,
                     tfn = x.tfn,
                     mobile_number = x.mobile_number,
                     email_address = x.email_address,
@@ -97,7 +96,7 @@ namespace WebApi
             entity.bank_id = value.bank_id;
             entity.tin = value.tin;
 			entity.hdmf_id = value.hdmf_id;
-			entity.pag-ibig_number = value.pag-ibig_number;
+			entity.pag_ibig_number = value.pag_ibig_number;
 			entity.sss_number = value.sss_number;
 			entity.phic_number = value.phic_number;
             entity.telephone_number = value.telephone_number;

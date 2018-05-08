@@ -59,6 +59,7 @@ namespace WebApi.Entities
 		public DbSet<Entities.pay_groups> pay_groups { get; set; }
 		public DbSet<Entities.payment_types> payment_types { get; set; }
 		public DbSet<Entities.payroll_frequencies> payroll_frequencies { get; set; }
+		public DbSet<Entities.identification_types> identification_types { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
