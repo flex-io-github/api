@@ -15,7 +15,7 @@ namespace WebApi.Entities
         //[Required]
         public string name { get; set; }
 		
-        public bool active { get; set; }
+        public bool is_active { get; set; }
 
         //[Required]
         public int created_by_id { get; set; }

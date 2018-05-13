@@ -121,6 +121,9 @@ namespace WebApi
 			entity.pay_group_id = value.pay_group_id;
 			entity.payment_type_id = value.payment_type_id;
 			entity.payroll_frequency_id = value.payroll_frequency_id;
+            entity.parameter_id = value.parameter_id;
+            entity.date_effective = value.date_effective;
+            entity.time_source_id = value.time_source_id;
             dbContext.SaveChanges();
             return entity;
         }

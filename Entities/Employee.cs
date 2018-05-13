@@ -98,6 +98,12 @@ namespace WebApi.Entities
 		
 		public int payroll_frequency_id { get; set; }
 
+        public int parameter_id { get; set; }
+
+        public DateTime date_effective { get; set; }
+
+        public int time_source_id { get; set; }
+
         //[Required]
         public int created_by_id { get; set; }
 

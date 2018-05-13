@@ -26,7 +26,7 @@ namespace WebApi.Controllers
         [HttpGet("LookUp")]
         public dynamic GetLookup()
         {
-            return dbContext.banks.Where(x => x.active == true)
+            return dbContext.banks.Where(x => x.is_active == true)
               .Select(x => new
               {
                   key = x.id,
@@ -57,7 +57,7 @@ namespace WebApi.Controllers
             var entity = dbContext.banks.Where(t => t.id == id).FirstOrDefault();
             entity.display = value.display;
             entity.name = value.name;
-            entity.active = value.active;
+            entity.is_active = value.is_active;
             dbContext.SaveChanges();
             return entity;
         }
