@@ -88,9 +88,9 @@ namespace WebApi.Entities
 		
 		public int supervisor_id { get; set; }
 		
-		public bool is_active { get; set; }
+		public bool? is_active { get; set; }
 		
-		public bool is_union { get; set; }
+		public bool? is_union { get; set; }
 		
 		public int pay_group_id { get; set; }
 		

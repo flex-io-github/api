@@ -9,6 +9,6 @@ namespace WebApi.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 		public string display { get; set; }
-		public bool is_flat_rate { get; set; }
+		public bool? is_flat_rate { get; set; }
     }
 }

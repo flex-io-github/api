@@ -16,7 +16,7 @@ namespace WebApi.Entities
 		public DateTime date_of_birth { get; set; }
 		public string contact_number { get; set; }
 		public string email_address { get; set; }
-		public bool is_claiming_exemptions { get; set; }
+		public bool? is_claiming_exemptions { get; set; }
 		public string employer_name { get; set; }
 		public string employer_tin { get; set; }
 		public int employment_status_id { get; set; }

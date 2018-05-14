@@ -19,7 +19,7 @@ namespace WebApi.Entities
         public int rdo_id { get; set; }
         public string line_of_business { get; set; }
         public int bank_id { get; set; }
-        public bool is_active { get; set; }
+        public bool? is_active { get; set; }
         public int created_by_id { get; set; }
         public DateTime date_created { get; set; }
         public int modified_by_id { get; set; }

@@ -62,6 +62,13 @@ namespace WebApi.Entities
 		public DbSet<Entities.identification_types> identification_types { get; set; }
 		public DbSet<Entities.parameters> parameters { get; set; }
 		public DbSet<Entities.time_sources> time_sources { get; set; }
+		public DbSet<Entities.tax_computations> tax_computations { get; set; }
+		public DbSet<Entities.tax_basis> tax_basis { get; set; }
+		public DbSet<Entities._13th_month_types> _13th_month_types { get; set; }
+		public DbSet<Entities._13th_month_round_directions> _13th_month_round_directions { get; set; }
+		public DbSet<Entities.date_basis> date_basis { get; set; }
+		public DbSet<Entities.payroll_periods> payroll_periods { get; set; }
+		public DbSet<Entities.payroll_period_types> payroll_period_types { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -495,6 +502,32 @@ namespace WebApi.Entities
                     entity.ToTable("time_sources");
                     entity.Property(e => e.is_active).HasDefaultValueSql("TRUE");
                     entity.Property(e => e.is_create_timesheet).HasDefaultValueSql("FALSE");
+                }
+            );
+
+            modelBuilder.Entity<tax_basis>(entity => {
+                    entity.ToTable("tax_basis");
+                    entity.Property(e => e.is_active).HasDefaultValueSql("TRUE");
+                }
+            );
+
+            modelBuilder.Entity<date_basis>(entity => {
+                    entity.ToTable("date_basis");
+                    entity.Property(e => e.is_active).HasDefaultValueSql("TRUE");
+                }
+            );
+
+            modelBuilder.Entity<payroll_periods>(entity => {
+                    entity.ToTable("payroll_periods");
+                    entity.Property(e => e.is_active).HasDefaultValueSql("TRUE");
+                    entity.Property(e => e.period_order).HasDefaultValueSql("0");
+                    entity.Property(e => e.company_id).HasDefaultValueSql("1");
+                    entity.Property(e => e.payroll_period_type_id).HasDefaultValueSql("0");
+                    entity.Property(e => e.is_regular_payroll_period).HasDefaultValueSql("FALSE");
+                    entity.Property(e => e.is_13th_month_pay).HasDefaultValueSql("FALSE");
+                    entity.Property(e => e.is_final_pay).HasDefaultValueSql("FALSE");
+                    entity.Property(e => e.is_annualization).HasDefaultValueSql("FALSE");
+                    entity.Property(e => e.is_special_payroll).HasDefaultValueSql("FALSE");
                 }
             );
         }

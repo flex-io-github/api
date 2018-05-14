@@ -16,6 +16,6 @@ namespace WebApi.Entities
 		public string description { get; set; }
 		public string remarks { get; set; }
 		public int year_end { get; set; }
-		public bool is_active { get; set; }
+		public bool? is_active { get; set; }
     }
 }

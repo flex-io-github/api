@@ -15,7 +15,7 @@ namespace WebApi.Entities
 		public DateTime expiry_date { get; set; }
 		public string issuer { get; set; }
 		public string place_coutry_of_issue { get; set; }
-		public bool is_active { get; set; }
+		public bool? is_active { get; set; }
 		public int created_by_id { get; set; }
 		public DateTime date_created { get; set; }
 		public int modified_by_id { get; set; }

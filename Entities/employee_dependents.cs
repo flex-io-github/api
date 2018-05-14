@@ -15,8 +15,8 @@ namespace WebApi.Entities
 		public string last_name { get; set; }
 		public DateTime date_of_birth { get; set; }
 		public int relationship_id { get; set; }
-		public bool is_mentally_physically_incapacitated { get; set; }
-		public bool is_active { get; set; }
+		public bool? is_mentally_physically_incapacitated { get; set; }
+		public bool? is_active { get; set; }
 		public int created_by_id { get; set; }
 		public DateTime date_created { get; set; }
 		public int modified_by_id { get; set; }

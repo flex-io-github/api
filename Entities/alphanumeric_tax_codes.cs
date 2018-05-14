@@ -15,13 +15,13 @@ namespace WebApi.Entities
 		
 		public float rate { get; set; }
 		
-		public bool is_ewt { get; set; }
+		public bool? is_ewt { get; set; }
 		
-		public bool is_fb_tax { get; set; }
+		public bool? is_fb_tax { get; set; }
 		
-		public bool is_final_tax { get; set; }
+		public bool? is_final_tax { get; set; }
 
-        public bool is_active { get; set; }
+        public bool? is_active { get; set; }
 		
         public int created_by_id { get; set; }
 		
