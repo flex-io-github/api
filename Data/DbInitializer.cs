@@ -253,10 +253,296 @@ namespace WebApi.Data
                 context.payroll_period_types.Add(s);
             }
 
+            var holidayTypes = new holiday_types[]
+            {
+               new holiday_types { display = "LEGAL", name = "REGULAR" },
+               new holiday_types { display = "SPECIAL", name = "SPECIAL" },
+               new holiday_types { display = "SPECIAL 2", name = "SPECIAL 2" }
+            };
+
+            foreach (holiday_types s in holidayTypes)
+            {
+                context.holiday_types.Add(s);
+            }
+
+            var dayTypes = new day_types[]
+            {
+                new day_types { display = "REG", name = "Regular Day", is_rest_day = false, is_holiday = false, holiday_type_id = 0,
+                    is_legal = false, is_special = false, is_special2 = false, is_regular = true },
+                new day_types { display = "RD", name = "Rest Day", is_rest_day = true, is_holiday = false, holiday_type_id = 0,
+                    is_legal = false, is_special = false, is_special2 = false, is_regular = false },
+                new day_types { display = "RD2", name = "Rest Day 2", is_rest_day = true, is_holiday = false, holiday_type_id = 0,
+                    is_legal = false, is_special = false, is_special2 = false, is_regular = false },
+                new day_types { display = "RD3", name = "Rest Day 3", is_rest_day = true, is_holiday = false, holiday_type_id = 0,
+                    is_legal = false, is_special = false, is_special2 = false, is_regular = false },
+                
+                new day_types { display = "LH", name = "Regular Holiday", is_rest_day = false, is_holiday = true, holiday_type_id = 1,
+                    is_legal = true, is_special = false, is_special2 = false, is_regular = false },
+                new day_types { display = "LR", name = "Regular Holiday Rest Day", is_rest_day = true, is_holiday = true, holiday_type_id = 1,
+                    is_legal = true, is_special = false, is_special2 = false, is_regular = false },
+                new day_types { display = "LR2", name = "Regular Holiday Rest Day 2", is_rest_day = true, is_holiday = true, holiday_type_id = 1,
+                    is_legal = true, is_special = false, is_special2 = false, is_regular = false },
+                new day_types { display = "LR3", name = "Regular Holiday Rest Day 3", is_rest_day = true, is_holiday = true, holiday_type_id = 1,
+                    is_legal = true, is_special = false, is_special2 = false, is_regular = false },
+
+                new day_types { display = "SH", name = "Special Holiday", is_rest_day = false, is_holiday = true, holiday_type_id = 2,
+                    is_legal = false, is_special = true, is_special2 = false, is_regular = false },
+                new day_types { display = "SR", name = "Special Holiday Rest Day", is_rest_day = true, is_holiday = true, holiday_type_id = 2,
+                    is_legal = false, is_special = true, is_special2 = false, is_regular = false },
+                new day_types { display = "SR2", name = "Special Holiday Rest Day 2", is_rest_day = true, is_holiday = true, holiday_type_id = 2,
+                    is_legal = false, is_special = true, is_special2 = false, is_regular = false },
+                new day_types { display = "SR3", name = "Special Holiday Rest Day 3", is_rest_day = true, is_holiday = true, holiday_type_id = 2,
+                    is_legal = false, is_special = true, is_special2 = false, is_regular = false },
+
+                new day_types { display = "SH2", name = "Special Holiday 2", is_rest_day = false, is_holiday = true, holiday_type_id = 3,
+                    is_legal = false, is_special = false, is_special2 = true, is_regular = false },
+                new day_types { display = "S2R", name = "Special Holiday 2 Rest Day", is_rest_day = true, is_holiday = true, holiday_type_id = 3,
+                    is_legal = false, is_special = false, is_special2 = true, is_regular = false },
+                new day_types { display = "S2R2", name = "Special Holiday 2 Rest Day 2", is_rest_day = true, is_holiday = true, holiday_type_id = 3,
+                    is_legal = false, is_special = false, is_special2 = true, is_regular = false },
+                new day_types { display = "S2R3", name = "Special Holiday 2 Rest Day 3", is_rest_day = true, is_holiday = true, holiday_type_id = 3,
+                    is_legal = false, is_special = false, is_special2 = true, is_regular = false }
+            };
+
+            foreach (day_types s in dayTypes)
+            {
+                context.day_types.Add(s);
+            }
+
+            var hourTypes = new hour_types[]
+            {
+                new hour_types { display = "BASIC", name = "Basic", sys_code = "BASIC",
+                    is_core_time = true, is_overtime = false, is_break_time = false, is_nd = false},
+                new hour_types { display = "OT", name = "Overtime", sys_code = "OT",
+                    is_core_time = false, is_overtime = true, is_break_time = false, is_nd = false},
+                new hour_types { display = "ND", name = "Night Differential", sys_code = "ND",
+                    is_core_time = true, is_overtime = false, is_break_time = false, is_nd = true},
+                new hour_types { display = "NDOT", name = "Night Differential Overtime", sys_code = "NDOT",
+                    is_core_time = false, is_overtime = true, is_break_time = false, is_nd = true},
+                new hour_types { display = "FIXED BREAK", name = "Fixed Break", sys_code = "FIXED BREAK",
+                    is_core_time = false, is_overtime = false, is_break_time = true, is_nd = false},
+                new hour_types { display = "FLEXI BREAK", name = "Flexi Break", sys_code = "FLEXI BREAK",
+                    is_core_time = false, is_overtime = false, is_break_time = true, is_nd = false},
+                new hour_types { display = "PAID BREAK", name = "Paid Break", sys_code = "PAID BREAK",
+                    is_core_time = false, is_overtime = false, is_break_time = true, is_nd = false},
+                new hour_types { display = "PURGE", name = "Purge", sys_code = "PURGE",
+                    is_core_time = false, is_overtime = false, is_break_time = false, is_nd = false},
+                new hour_types { display = "NONE", name = "None", sys_code = "NONE",
+                    is_core_time = false, is_overtime = false, is_break_time = false, is_nd = false},
+                new hour_types { display = "OT EXCESS", name = "Overtime Excess", sys_code = "OTEXCESS",
+                    is_core_time = false, is_overtime = true, is_break_time = false, is_nd = false},
+                new hour_types { display = "NDOT EXCESS", name = "Night Differential Overtime Excess", sys_code = "NDOTEXCESS",
+                    is_core_time = false, is_overtime = true, is_break_time = false, is_nd = true},
+            };
+
+            foreach (hour_types s in hourTypes)
+            {
+                context.hour_types.Add(s);
+            }
+
+            var interestRateTypes = new interest_rate_types[]
+            {
+               new interest_rate_types { name = "Percent" },
+               new interest_rate_types { name = "Amount" }
+            };
+
+            foreach (interest_rate_types s in interestRateTypes)
+            {
+                context.interest_rate_types.Add(s);
+            }
+            
+            var interestTypes = new interest_types[]
+            {
+               new interest_types { name = "Fixed", is_active = true },
+               new interest_types { name = "Diminishing", is_active = true }
+            };
+
+            foreach (interest_types s in interestTypes)
+            {
+                context.interest_types.Add(s);
+            }
+
+            var payTaxTypes = new pay_tax_types[]
+            {
+                new pay_tax_types { display = "BASICSALARY", name = "Taxable (Basic Salary)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = true, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "REPRESENTATION", name = "Taxable (Representation)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "TRANSPORTATION", name = "Taxable (Transportation)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "COLA", name = "Taxable (Cost of living allowance)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = true, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "FIXEDHOUSING", name = "Taxable (Fixed housing allowance)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "OTHER1", name = "Taxable (Others Regular 1)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "OTHER2", name = "Taxable (Others Regular 2)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "COMMISSION", name = "Taxable (Commission)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "PROFITSHARING", name = "Taxable (Profit sharing)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "FEES", name = "Taxable (Fees including Director's fees)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "HAZARDPAY", name = "Taxable (Hazard pay)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = true, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "OTHSUPP1", name = "Taxable (Others Supplementary 1)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "OTHSUPP2", name = "Taxable (Others Supplementary 2)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "NTAXCONTRIBUTION", name = "Non-taxable (SSS, GSIS, PHIC & PagIbig contributions & union dues)", 
+                    is_earning = false, is_minimum_wage_earner_exempt = true, is_taxable = false, 
+                    taxable_mult = -1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "NTAXCOMPENSATION", name = "Non-taxable (Salaries and other forms of compensation)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = false, 
+                    taxable_mult = 0, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "13THMONTH", name = "13th Month pay and other benefits", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = false, 
+                    taxable_mult = 0, is_supplementary = true, is_13th_month_pay = true},
+                new pay_tax_types { display = "PREMIUM", name = "Premium paid on health insurance", 
+                    is_earning = false, is_minimum_wage_earner_exempt = true, is_taxable = false, 
+                    taxable_mult = -1, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "FRINGEBENEFIT", name = "Fringe Benefit Taxable", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = false, 
+                    taxable_mult = 0, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "DEMINIMISBENEFITS", name = "Non-taxable (De Minimis Benefits)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = false, is_taxable = false, 
+                    taxable_mult = 0, is_supplementary = false, is_13th_month_pay = false},
+                new pay_tax_types { display = "HOLIDAYPAY", name = "Taxable (Holiday Pay)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = true, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "OVERTIMEPAY", name = "Taxable (Overtime Pay)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = true, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+                new pay_tax_types { display = "NIGHTSHIFTDIFFERENTIAL", name = "Taxable (Night Shift Differential)", 
+                    is_earning = true, is_minimum_wage_earner_exempt = true, is_taxable = true, 
+                    taxable_mult = 1, is_supplementary = true, is_13th_month_pay = false},
+            };
+
+            foreach (pay_tax_types s in payTaxTypes)
+            {
+                context.pay_tax_types.Add(s);
+            }
+
+            var timeTypes = new time_types[]
+            {
+               new time_types { name = "Minute" },
+               new time_types { name = "Hour" },
+               new time_types { name = "Day" }
+            };
+
+            foreach (time_types s in timeTypes)
+            {
+                context.time_types.Add(s);
+            }
+
+             var timeUnits = new time_units[]
+            {
+                new time_units { name = "Per Minute", is_active = false, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Half Hour", is_active = false, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Hour", is_active = true, is_include_basic = true, is_include_ot = true, is_include_nd = true, is_include_ndot = true, is_minimum = true, is_exclude_leave = false, is_exclude_ob = true, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = true, is_rest_day2 = true, is_rest_day3 = true, is_legal_holiday = true, is_legal_rest_day = true, is_legal_rest_day2 = true, is_legal_rest_day3 = true, is_special_holiday = true, is_special_rest_day = true, is_special_rest_day2 = true, is_special_rest_day3 = true, is_special_holiday2 = true, is_special2_rest_day = true, is_special2_rest_day2 = true, is_special2_rest_day3 = true, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Half Day", is_active = false, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Day", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = true, is_exclude_leave = true, is_exclude_ob = true, is_deduct_absent = false, is_deduct_tardy = true, is_deduct_mid_break = true, is_deduct_undertime = true, is_deduct_unpaid_holiday = false, is_deduct_halfday = true, is_prorated = false, is_regular_day = true, is_rest_day = true, is_rest_day2 = true, is_rest_day3 = true, is_legal_holiday = true, is_legal_rest_day = true, is_legal_rest_day2 = true, is_legal_rest_day3 = true, is_special_holiday = true, is_special_rest_day = true, is_special_rest_day2 = true, is_special_rest_day3 = true, is_special_holiday2 = true, is_special2_rest_day = true, is_special2_rest_day2 = true, is_special2_rest_day3 = true, is_use_formula = true, is_de_minimis = true, is_include_tardy = true, is_include_midbreak = true, is_include_undertime = true, is_deduct_leave_hours = true},
+                new time_units { name = "Per Period", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = true, is_exclude_ob = true, is_deduct_absent = true, is_deduct_tardy = true, is_deduct_mid_break = true, is_deduct_undertime = true, is_deduct_unpaid_holiday = true, is_deduct_halfday = true, is_prorated = false, is_regular_day = false, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Month", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = true, is_exclude_ob = true, is_deduct_absent = true, is_deduct_tardy = true, is_deduct_mid_break = true, is_deduct_undertime = true, is_deduct_unpaid_holiday = true, is_deduct_halfday = true, is_prorated = false, is_regular_day = false, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = true, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Half Day Absent", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Whole Day Absent", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Tardy Count", is_active = false, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Minute Tardy", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Midbreak Count", is_active = false, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Minute Midbreak", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Undertime Count", is_active = false, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Minute Undertime", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Occurrence of a Day", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = true, is_regular_day = true, is_rest_day = true, is_rest_day2 = true, is_rest_day3 = true, is_legal_holiday = true, is_legal_rest_day = true, is_legal_rest_day2 = true, is_legal_rest_day3 = true, is_special_holiday = true, is_special_rest_day = true, is_special_rest_day2 = true, is_special_rest_day3 = true, is_special_holiday2 = true, is_special2_rest_day = true, is_special2_rest_day2 = true, is_special2_rest_day3 = true, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Day On Leave", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = true, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = true, is_legal_rest_day = true, is_legal_rest_day2 = true, is_legal_rest_day3 = true, is_special_holiday = true, is_special_rest_day = true, is_special_rest_day2 = true, is_special_rest_day3 = true, is_special_holiday2 = true, is_special2_rest_day = true, is_special2_rest_day2 = true, is_special2_rest_day3 = true, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Year", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = false, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = false, is_de_minimis = true, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Semester", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = false, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = false, is_legal_rest_day = false, is_legal_rest_day2 = false, is_legal_rest_day3 = false, is_special_holiday = false, is_special_rest_day = false, is_special_rest_day2 = false, is_special_rest_day3 = false, is_special_holiday2 = false, is_special2_rest_day = false, is_special2_rest_day2 = false, is_special2_rest_day3 = false, is_use_formula = false, is_de_minimis = true, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+                new time_units { name = "Per Paid Holiday", is_active = true, is_include_basic = false, is_include_ot = false, is_include_nd = false, is_include_ndot = false, is_minimum = false, is_exclude_leave = false, is_exclude_ob = false, is_deduct_absent = false, is_deduct_tardy = false, is_deduct_mid_break = false, is_deduct_undertime = false, is_deduct_unpaid_holiday = false, is_deduct_halfday = false, is_prorated = false, is_regular_day = false, is_rest_day = false, is_rest_day2 = false, is_rest_day3 = false, is_legal_holiday = true, is_legal_rest_day = true, is_legal_rest_day2 = true, is_legal_rest_day3 = true, is_special_holiday = true, is_special_rest_day = true, is_special_rest_day2 = true, is_special_rest_day3 = true, is_special_holiday2 = true, is_special2_rest_day = true, is_special2_rest_day2 = true, is_special2_rest_day3 = true, is_use_formula = true, is_de_minimis = false, is_include_tardy = false, is_include_midbreak = false, is_include_undertime = false, is_deduct_leave_hours = false},
+            };
+
+            foreach (time_units s in timeUnits)
+            {
+                context.time_units.Add(s);
+            }
+
+            var payrollHourTypes = new payroll_hour_types[]
+            {
+               new payroll_hour_types { name = "Basic", time_unit_id = 0 },
+               new payroll_hour_types { name = "OT", time_unit_id = 3 },
+               new payroll_hour_types { name = "ND", time_unit_id = 3 },
+               new payroll_hour_types { name = "NDOT", time_unit_id = 3 },
+               new payroll_hour_types { name = "OT EXCESS", time_unit_id = 3 },
+               new payroll_hour_types { name = "NDOT EXCESS", time_unit_id = 3 },
+               new payroll_hour_types { name = "Absent", time_unit_id = 5 },
+               new payroll_hour_types { name = "Tardy", time_unit_id = 1 },
+               new payroll_hour_types { name = "Undertime", time_unit_id = 1 },
+            };
+
+            foreach (payroll_hour_types s in payrollHourTypes)
+            {
+                context.payroll_hour_types.Add(s);
+            }
+
+            var payElementTypes = new pay_element_types[]
+            {
+               new pay_element_types { display = "EARNING", name = "Earning" },
+               new pay_element_types { display = "DEDUCTION", name = "Deduction" },
+               new pay_element_types { display = "LOAN", name = "Loan" },
+               new pay_element_types { display = "ALLOWANCE", name = "Allowance" }
+            };
+
+            foreach (pay_element_types s in payElementTypes)
+            {
+                context.pay_element_types.Add(s);
+            }
+
+            var Rates = new rates[]
+            {
+               new rates { name = "Hourly Rate" },
+               new rates { name = "Daily Rate" },
+               new rates { name = "Monthly Rate" },
+               new rates { name = "Basic Pay" },
+               new rates { name = "Hourly Allowance" },
+               new rates { name = "Daily Allowance" },
+               new rates { name = "Monthly Allowance" },
+               new rates { name = "Hourly COLA" },
+               new rates { name = "Daily COLA" },
+               new rates { name = "Monthly COLA" },
+               new rates { name = "Net Pay" }
+            };
+
+            foreach (rates s in Rates)
+            {
+                context.rates.Add(s);
+            }
+
+            var payElementDisplays = new pay_element_displays[]
+            {
+               new pay_element_displays { name = "Code" },
+               new pay_element_displays { name = "Group Code" },
+               new pay_element_displays { name = "Name" },
+               new pay_element_displays { name = "Payroll Register Group Code" }
+            };
+
+            foreach (pay_element_displays s in payElementDisplays)
+            {
+                context.pay_element_displays.Add(s);
+            }
+
             context.SaveChanges();
-
-
-
 
             //var enrollments = new Enrollment[]
             //{

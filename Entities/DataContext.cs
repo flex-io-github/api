@@ -69,6 +69,21 @@ namespace WebApi.Entities
 		public DbSet<Entities.date_basis> date_basis { get; set; }
 		public DbSet<Entities.payroll_periods> payroll_periods { get; set; }
 		public DbSet<Entities.payroll_period_types> payroll_period_types { get; set; }
+		public DbSet<Entities.pay_elements> pay_elements { get; set; }
+		public DbSet<Entities.currencies> currencies { get; set; }
+		public DbSet<Entities.day_types> day_types { get; set; }
+		public DbSet<Entities.holiday_types> holiday_types { get; set; }
+		public DbSet<Entities.hour_types> hour_types { get; set; }
+		public DbSet<Entities.interest_rate_types> interest_rate_types { get; set; }
+		public DbSet<Entities.interest_types> interest_types { get; set; }
+		public DbSet<Entities.pay_tax_types> pay_tax_types { get; set; }
+		public DbSet<Entities.time_types> time_types { get; set; }
+		public DbSet<Entities.time_units> time_units { get; set; }
+		public DbSet<Entities.payroll_hour_types> payroll_hour_types { get; set; }
+		public DbSet<Entities.pay_element_types> pay_element_types { get; set; }
+		public DbSet<Entities.de_minimis> de_minimis { get; set; }
+		public DbSet<Entities.rates> rates { get; set; }
+		public DbSet<Entities.pay_element_displays> pay_element_displays { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
