@@ -124,6 +124,21 @@ namespace WebApi
             entity.parameter_id = value.parameter_id;
             entity.date_effective = value.date_effective;
             entity.time_source_id = value.time_source_id;
+            entity.monthly_rate = value.monthly_rate;
+            entity.monthly_cola = value.monthly_cola;
+            entity.monthly_allowance = value.monthly_allowance;
+            entity.daily_rate = value.daily_rate;
+            entity.daily_cola = value.daily_cola;
+            entity.daily_allowance = value.daily_allowance;
+            entity.hourly_rate = value.hourly_rate;
+            entity.hourly_cola = value.hourly_cola;
+            entity.hourly_allowance = value.hourly_allowance;
+            entity.date_hired = value.date_hired;
+            entity.date_regular = value.date_regular;
+            entity.date_separated = value.date_separated;
+            entity.contract_start_date = value.contract_start_date;
+            entity.contract_end_date = value.contract_end_date;
+            entity.payout_type_id = value.payout_type_id;
             dbContext.SaveChanges();
             return entity;
         }

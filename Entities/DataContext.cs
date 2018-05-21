@@ -84,6 +84,13 @@ namespace WebApi.Entities
 		public DbSet<Entities.de_minimis> de_minimis { get; set; }
 		public DbSet<Entities.rates> rates { get; set; }
 		public DbSet<Entities.pay_element_displays> pay_element_displays { get; set; }
+		public DbSet<Entities.payout_types> payout_types { get; set; }
+		public DbSet<Entities.bank_accounts> bank_accounts { get; set; }
+		public DbSet<Entities.bank_account_types> bank_account_types { get; set; }
+		public DbSet<Entities.hdmf> hdmf { get; set; }
+		public DbSet<Entities.sss> sss { get; set; }
+		public DbSet<Entities.philhealth> philhealth { get; set; }
+		public DbSet<Entities.philhealth_ver2> philhealth_ver2 { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

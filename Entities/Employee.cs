@@ -104,6 +104,22 @@ namespace WebApi.Entities
 
         public int time_source_id { get; set; }
 
+        public float? monthly_rate { get; set; }
+        public float? monthly_cola { get; set; }
+        public float? monthly_allowance { get; set; }
+        public float? daily_rate { get; set; }
+        public float? daily_cola { get; set; }
+        public float? daily_allowance { get; set; }
+        public float? hourly_rate { get; set; }
+        public float? hourly_cola { get; set; }
+        public float? hourly_allowance { get; set; }
+        public DateTime? date_hired { get; set; }
+        public DateTime? date_regular { get; set; }
+        public DateTime? date_separated { get; set; }
+        public DateTime? contract_start_date { get; set; }
+        public DateTime? contract_end_date { get; set; }
+        public int? payout_type_id { get; set; }
+        
         //[Required]
         public int created_by_id { get; set; }
 

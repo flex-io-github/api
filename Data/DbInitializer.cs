@@ -542,6 +542,132 @@ namespace WebApi.Data
                 context.pay_element_displays.Add(s);
             }
 
+            var payoutTypes = new payout_types[]
+            {
+               new payout_types { name = "Bank Account" },
+               new payout_types { name = "Cash" },
+               new payout_types { name = "Cheque" }
+            };
+
+            foreach (payout_types s in payoutTypes)
+            {
+                context.payout_types.Add(s);
+            }
+
+            var bankAccountTypes = new bank_account_types[]
+            {
+               new bank_account_types { name = "SA" },
+               new bank_account_types { name = "CA" }
+            };
+
+            foreach (bank_account_types s in bankAccountTypes)
+            {
+                context.bank_account_types.Add(s);
+            }
+
+            var hdmf = new hdmf[]
+            {
+                new hdmf { bracket = 1, range1 = 0, range2 = 1500, percent_ee = 1, percent_er = 2, 
+                    min_ee = 100, min_er = 100, max_ee = 100, max_er = 100, non_taxable_amount = 100, },
+                new hdmf { bracket = 2, range1 = 0, range2 = 999999999.99f, percent_ee = 2, percent_er = 2, 
+                    min_ee = 100, min_er = 100, max_ee = 100, max_er = 100, non_taxable_amount = 100 }
+            };
+
+            foreach (hdmf s in hdmf)
+            {
+                context.hdmf.Add(s);
+            }
+
+            var sss = new sss[]
+            {
+                new sss { bracket = 1, range1 = 1000, range2 = 1249.99f, monthly_salary_credit = 1000f, sss_ee = 36.3f, sss_er = 73.7f, ecc_er = 10, sss_total = 120 }, 
+                new sss { bracket = 2, range1 = 1250, range2 = 1749.99f, monthly_salary_credit = 1500f, sss_ee = 54.5f, sss_er = 110.5f, ecc_er = 10, sss_total = 175 }, 
+                new sss { bracket = 3, range1 = 1750, range2 = 2249.99f, monthly_salary_credit = 2000f, sss_ee = 72.7f, sss_er = 147.3f, ecc_er = 10, sss_total = 230 }, 
+                new sss { bracket = 4, range1 = 2250, range2 = 2749.99f, monthly_salary_credit = 2500f, sss_ee = 90.8f, sss_er = 184.2f, ecc_er = 10, sss_total = 285 }, 
+                new sss { bracket = 5, range1 = 2750, range2 = 3249.99f, monthly_salary_credit = 3000f, sss_ee = 109f, sss_er = 221f, ecc_er = 10, sss_total = 340 }, 
+                new sss { bracket = 6, range1 = 3250, range2 = 3749.99f, monthly_salary_credit = 3500f, sss_ee = 127.2f, sss_er = 257.8f, ecc_er = 10, sss_total = 395 }, 
+                new sss { bracket = 7, range1 = 3750, range2 = 4249.99f, monthly_salary_credit = 4000f, sss_ee = 145.3f, sss_er = 294.7f, ecc_er = 10, sss_total = 450 }, 
+                new sss { bracket = 8, range1 = 4250, range2 = 4749.99f, monthly_salary_credit = 4500f, sss_ee = 163.5f, sss_er = 331.5f, ecc_er = 10, sss_total = 505 }, 
+                new sss { bracket = 9, range1 = 4750, range2 = 5249.99f, monthly_salary_credit = 5000f, sss_ee = 181.7f, sss_er = 368.3f, ecc_er = 10, sss_total = 560 }, 
+                new sss { bracket = 10, range1 = 5250, range2 = 5749.99f, monthly_salary_credit = 5500f, sss_ee = 199.8f, sss_er = 405.2f, ecc_er = 10, sss_total = 615 }, 
+                new sss { bracket = 11, range1 = 5750, range2 = 6249.99f, monthly_salary_credit = 6000f, sss_ee = 218f, sss_er = 442f, ecc_er = 10, sss_total = 670 }, 
+                new sss { bracket = 12, range1 = 6250, range2 = 6749.99f, monthly_salary_credit = 6500f, sss_ee = 236.2f, sss_er = 478.8f, ecc_er = 10, sss_total = 725 }, 
+                new sss { bracket = 13, range1 = 6750, range2 = 7249.99f, monthly_salary_credit = 7000f, sss_ee = 254.3f, sss_er = 515.7f, ecc_er = 10, sss_total = 780 }, 
+                new sss { bracket = 14, range1 = 7250, range2 = 7749.99f, monthly_salary_credit = 7500f, sss_ee = 272.5f, sss_er = 552.5f, ecc_er = 10, sss_total = 835 }, 
+                new sss { bracket = 15, range1 = 7750, range2 = 8249.99f, monthly_salary_credit = 8000f, sss_ee = 290.7f, sss_er = 589.3f, ecc_er = 10, sss_total = 890 }, 
+                new sss { bracket = 16, range1 = 8250, range2 = 8749.99f, monthly_salary_credit = 8500f, sss_ee = 308.8f, sss_er = 626.2f, ecc_er = 10, sss_total = 945 }, 
+                new sss { bracket = 17, range1 = 8750, range2 = 9249.99f, monthly_salary_credit = 9000f, sss_ee = 327f, sss_er = 663f, ecc_er = 10, sss_total = 1000 }, 
+                new sss { bracket = 18, range1 = 9250, range2 = 9749.99f, monthly_salary_credit = 9500f, sss_ee = 345.2f, sss_er = 699.8f, ecc_er = 10, sss_total = 1055 }, 
+                new sss { bracket = 19, range1 = 9750, range2 = 10249.99f, monthly_salary_credit = 10000f, sss_ee = 363.3f, sss_er = 736.7f, ecc_er = 10, sss_total = 1110 }, 
+                new sss { bracket = 20, range1 = 10250, range2 = 10749.99f, monthly_salary_credit = 10500f, sss_ee = 381.5f, sss_er = 773.5f, ecc_er = 10, sss_total = 1165 }, 
+                new sss { bracket = 21, range1 = 10750, range2 = 11249.99f, monthly_salary_credit = 11000f, sss_ee = 399.7f, sss_er = 810.3f, ecc_er = 10, sss_total = 1220 }, 
+                new sss { bracket = 22, range1 = 11250, range2 = 11749.99f, monthly_salary_credit = 11500f, sss_ee = 417.8f, sss_er = 847.2f, ecc_er = 10, sss_total = 1275 }, 
+                new sss { bracket = 23, range1 = 11750, range2 = 12249.99f, monthly_salary_credit = 12000f, sss_ee = 436f, sss_er = 884f, ecc_er = 10, sss_total = 1330 }, 
+                new sss { bracket = 24, range1 = 12250, range2 = 12749.99f, monthly_salary_credit = 12500f, sss_ee = 454.2f, sss_er = 920.8f, ecc_er = 10, sss_total = 1385 }, 
+                new sss { bracket = 25, range1 = 12750, range2 = 13249.99f, monthly_salary_credit = 13000f, sss_ee = 472.3f, sss_er = 957.7f, ecc_er = 10, sss_total = 1440 }, 
+                new sss { bracket = 26, range1 = 13250, range2 = 13749.99f, monthly_salary_credit = 13500f, sss_ee = 490.5f, sss_er = 994.5f, ecc_er = 10, sss_total = 1495 }, 
+                new sss { bracket = 27, range1 = 13750, range2 = 14249.99f, monthly_salary_credit = 14000f, sss_ee = 508.7f, sss_er = 1031.3f, ecc_er = 10, sss_total = 1550 }, 
+                new sss { bracket = 28, range1 = 14250, range2 = 14749.99f, monthly_salary_credit = 14500f, sss_ee = 526.8f, sss_er = 1068.2f, ecc_er = 10, sss_total = 1605 }, 
+                new sss { bracket = 29, range1 = 14750, range2 = 15249.99f, monthly_salary_credit = 15000f, sss_ee = 545f, sss_er = 1105f, ecc_er = 30, sss_total = 1680 }, 
+                new sss { bracket = 30, range1 = 15250, range2 = 15749.99f, monthly_salary_credit = 15500f, sss_ee = 563.2f, sss_er = 1141.8f, ecc_er = 30, sss_total = 1735 }, 
+                new sss { bracket = 31, range1 = 15750, range2 = 999999999.99f, monthly_salary_credit = 16000f, sss_ee = 581.3f, sss_er = 1178.7f, ecc_er = 30, sss_total = 1790 }
+
+            };
+
+            foreach (sss s in sss)
+            {
+                context.sss.Add(s);
+            }
+
+            var philHealth = new philhealth[]
+            {
+                new philhealth { bracket = 1, range1 = 0.01f, range2 = 8999.99f, phic_ee = 100f, phic_er = 100f, salary_base = 8000, total = 200 }, 
+                new philhealth { bracket = 2, range1 = 9000f, range2 = 9999.99f, phic_ee = 112.5f, phic_er = 112.5f, salary_base = 9000, total = 225 }, 
+                new philhealth { bracket = 3, range1 = 10000f, range2 = 10999.99f, phic_ee = 125f, phic_er = 125f, salary_base = 10000, total = 250 }, 
+                new philhealth { bracket = 4, range1 = 11000f, range2 = 11999.99f, phic_ee = 137.5f, phic_er = 137.5f, salary_base = 11000, total = 275 }, 
+                new philhealth { bracket = 5, range1 = 12000f, range2 = 12999.99f, phic_ee = 150f, phic_er = 150f, salary_base = 12000, total = 300 }, 
+                new philhealth { bracket = 6, range1 = 13000f, range2 = 13999.99f, phic_ee = 162.5f, phic_er = 162.5f, salary_base = 13000, total = 325 }, 
+                new philhealth { bracket = 7, range1 = 14000f, range2 = 14999.99f, phic_ee = 175f, phic_er = 175f, salary_base = 14000, total = 350 }, 
+                new philhealth { bracket = 8, range1 = 15000f, range2 = 15999.99f, phic_ee = 187.5f, phic_er = 187.5f, salary_base = 15000, total = 375 }, 
+                new philhealth { bracket = 9, range1 = 16000f, range2 = 16999.99f, phic_ee = 200f, phic_er = 200f, salary_base = 16000, total = 400 }, 
+                new philhealth { bracket = 10, range1 = 17000f, range2 = 17999.99f, phic_ee = 212.5f, phic_er = 212.5f, salary_base = 17000, total = 425 }, 
+                new philhealth { bracket = 11, range1 = 18000f, range2 = 18999.99f, phic_ee = 225f, phic_er = 225f, salary_base = 18000, total = 450 }, 
+                new philhealth { bracket = 12, range1 = 19000f, range2 = 19999.99f, phic_ee = 237.5f, phic_er = 237.5f, salary_base = 19000, total = 475 }, 
+                new philhealth { bracket = 13, range1 = 20000f, range2 = 20999.99f, phic_ee = 250f, phic_er = 250f, salary_base = 20000, total = 500 }, 
+                new philhealth { bracket = 14, range1 = 21000f, range2 = 21999.99f, phic_ee = 262.5f, phic_er = 262.5f, salary_base = 21000, total = 525 }, 
+                new philhealth { bracket = 15, range1 = 22000f, range2 = 22999.99f, phic_ee = 275f, phic_er = 275f, salary_base = 22000, total = 550 }, 
+                new philhealth { bracket = 16, range1 = 23000f, range2 = 23999.99f, phic_ee = 287.5f, phic_er = 287.5f, salary_base = 23000, total = 575 }, 
+                new philhealth { bracket = 17, range1 = 24000f, range2 = 24999.99f, phic_ee = 300f, phic_er = 300f, salary_base = 24000, total = 600 }, 
+                new philhealth { bracket = 18, range1 = 25000f, range2 = 25999.99f, phic_ee = 312.5f, phic_er = 312.5f, salary_base = 25000, total = 625 }, 
+                new philhealth { bracket = 19, range1 = 26000f, range2 = 26999.99f, phic_ee = 325f, phic_er = 325f, salary_base = 26000, total = 650 }, 
+                new philhealth { bracket = 20, range1 = 27000f, range2 = 27999.99f, phic_ee = 337.5f, phic_er = 337.5f, salary_base = 27000, total = 675 }, 
+                new philhealth { bracket = 21, range1 = 28000f, range2 = 28999.99f, phic_ee = 350f, phic_er = 350f, salary_base = 28000, total = 700 }, 
+                new philhealth { bracket = 22, range1 = 29000f, range2 = 29999.99f, phic_ee = 362.5f, phic_er = 362.5f, salary_base = 29000, total = 725 }, 
+                new philhealth { bracket = 23, range1 = 30000f, range2 = 30999.99f, phic_ee = 375f, phic_er = 375f, salary_base = 30000, total = 750 }, 
+                new philhealth { bracket = 24, range1 = 31000f, range2 = 31999.99f, phic_ee = 387.5f, phic_er = 387.5f, salary_base = 31000, total = 775 }, 
+                new philhealth { bracket = 25, range1 = 32000f, range2 = 32999.99f, phic_ee = 400f, phic_er = 400f, salary_base = 32000, total = 800 }, 
+                new philhealth { bracket = 26, range1 = 33000f, range2 = 33999.99f, phic_ee = 412.5f, phic_er = 412.5f, salary_base = 33000, total = 825 }, 
+                new philhealth { bracket = 27, range1 = 34000f, range2 = 34999.99f, phic_ee = 425f, phic_er = 425f, salary_base = 34000, total = 850 }, 
+                new philhealth { bracket = 28, range1 = 35000f, range2 = 9999999.99f, phic_ee = 437.5f, phic_er = 437.5f, salary_base = 35000, total = 875 }
+            };
+
+            foreach (philhealth s in philHealth)
+            {
+                context.philhealth.Add(s);
+            }
+
+            var philhealthVer2 = new philhealth_ver2[]
+            {
+                new philhealth_ver2 { bracket = 1, range1 = 0.01f, range2 = 7000f, contribution_type_id = 2, phic_ee = 105f, phic_er = 105f }, 
+                new philhealth_ver2 { bracket = 2, range1 = 7000.01f, range2 = 50000f, contribution_type_id = 1, phic_ee = 1.5f, phic_er = 1.5f }, 
+                new philhealth_ver2 { bracket = 3, range1 = 50000.01f, range2 = 999999999.99f, contribution_type_id = 2, phic_ee = 750f, phic_er = 750f }
+            };
+
+            foreach (philhealth_ver2 s in philhealthVer2)
+            {
+                context.philhealth_ver2.Add(s);
+            }
+
             context.SaveChanges();
 
             //var enrollments = new Enrollment[]
