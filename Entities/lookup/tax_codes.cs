@@ -9,13 +9,13 @@ namespace WebApi.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 		public string group { get; set; }
-		public int sequence { get; set; }
+		public int? sequence { get; set; }
 		public string display { get; set; }
-		public int dependents { get; set; }
-		public float exemption { get; set; }
+		public int? dependents { get; set; }
+		public float? exemption { get; set; }
 		public string description { get; set; }
 		public string remarks { get; set; }
-		public int year_end { get; set; }
+		public int? year_end { get; set; }
 		public bool? is_active { get; set; }
     }
 }

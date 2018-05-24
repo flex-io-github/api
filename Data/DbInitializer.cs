@@ -668,6 +668,166 @@ namespace WebApi.Data
                 context.philhealth_ver2.Add(s);
             }
 
+            var employmentTypes = new employment_types[]
+            {
+                new employment_types { 
+                    display = "Regular", name = "Regular",
+                    is_active = true, is_process = true, is_temporary = true, is_probation = false, is_contractual = false, is_project_based = false,
+                    is_outsourced = false, is_absorbed = false, is_regular = true, is_resigned = false, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Resigned", name = "Resigned",
+                    is_active = true, is_process = false, is_temporary = false, is_probation = false, is_contractual = false, is_project_based = false,
+                    is_outsourced = false, is_absorbed = false, is_regular = false, is_resigned = true, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Temporary", name = "Temporary",
+                    is_active = true, is_process = true, is_temporary = true, is_probation = false, is_contractual = false, is_project_based = false,
+                    is_outsourced = false, is_absorbed = false, is_regular = false, is_resigned = false, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Probation", name = "Probation",
+                    is_active = true, is_process = true, is_temporary = true, is_probation = true, is_contractual = false, is_project_based = false,
+                    is_outsourced = false, is_absorbed = false, is_regular = false, is_resigned = false, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Contractual", name = "Contractual",
+                    is_active = true, is_process = true, is_temporary = true, is_probation = false, is_contractual = true, is_project_based = false,
+                    is_outsourced = false, is_absorbed = false, is_regular = false, is_resigned = false, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Project Based", name = "Project Based",
+                    is_active = true, is_process = true, is_temporary = true, is_probation = false, is_contractual = false, is_project_based = true,
+                    is_outsourced = false, is_absorbed = false, is_regular = false, is_resigned = false, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Outsourced", name = "Outsourced",
+                    is_active = true, is_process = true, is_temporary = true, is_probation = false, is_contractual = false, is_project_based = false,
+                    is_outsourced = true, is_absorbed = false, is_regular = false, is_resigned = false, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Absorbed", name = "Absorbed",
+                    is_active = true, is_process = true, is_temporary = true, is_probation = false, is_contractual = false, is_project_based = false,
+                    is_outsourced = false, is_absorbed = true, is_regular = false, is_resigned = false, is_terminated = false, is_retired = false
+                },
+                new employment_types { 
+                    display = "Terminated", name = "Terminated", 
+                    is_active = true, is_process = false, is_temporary = false, is_probation = false, is_contractual = false, is_project_based = false,
+                    is_outsourced = false, is_absorbed = false, is_regular = false, is_resigned = false, is_terminated = true, is_retired = false
+                },
+                new employment_types { 
+                    display = "Retired", name = "Retired", 
+                    is_active = true, is_process = false, is_temporary = false, is_probation = false, is_contractual = false, is_project_based = false,
+                    is_outsourced = false, is_absorbed = false, is_regular = false, is_resigned = false, is_terminated = false, is_retired = true
+                }
+            };
+
+            foreach (employment_types s in employmentTypes)
+            {
+                context.employment_types.Add(s);
+            }
+
+            var taxCodes = new tax_codes[]
+            {
+                new tax_codes { group = "A", sequence = 1, display = "Z", dependents = 0, exemption = 0.00f,
+                    description = "Zero Exemption", is_active = true, remarks = "Applicable up to year 2007 only, zero exemption (for employees multiple employers for their 2nd, 3rd", year_end = 2007 },
+                new tax_codes { group = "A", sequence = 2, display = "S", dependents = 0, exemption = 20000.00f,
+                    description = "Single", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "A", sequence = 3, display = "HF", dependents = 0, exemption = 25000.00f,
+                    description = "Head of the family", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "A", sequence = 4, display = "ME", dependents = 0, exemption = 32000.00f,
+                    description = "Married", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "B", sequence = 1, display = "HF1", dependents = 1, exemption = 33000.00f,
+                    description = "Head of the family with one (1) dependent", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "B", sequence = 2, display = "HF2", dependents = 2, exemption = 41000.00f,
+                    description = "Head of the family with two (2) dependents", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "B", sequence = 3, display = "HF3", dependents = 3, exemption = 49000.00f,
+                    description = "Head of the family with three (3) dependents", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "B", sequence = 4, display = "HF4", dependents = 4, exemption = 57000.00f,
+                    description = "Head of the family with four (4) dependents", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "C", sequence = 1, display = "ME1", dependents = 1, exemption = 40000.00f,
+                    description = "Married with one (1) dependent", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "C", sequence = 2, display = "ME2", dependents = 2, exemption = 48000.00f,
+                    description = "Married with two (2) dependents", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "C", sequence = 3, display = "ME3", dependents = 3, exemption = 56000.00f,
+                    description = "Married with three (3) dependents", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "C", sequence = 4, display = "ME4", dependents = 4, exemption = 64000.00f,
+                    description = "Married with four (4) dependents", is_active = true, remarks = "Applicable up to year 2007 only", year_end = 2007 },
+                new tax_codes { group = "A", sequence = 1, display = "Z", dependents = 0, exemption = 0.00f,
+                    description = "Zero Exemption", is_active = true, remarks = "Applicable up to year 2008 only, zero exemption (for employees multiple employers for their 2nd, 3rd", year_end = 2008 },
+                new tax_codes { group = "A", sequence = 2, display = "S", dependents = 0, exemption = 35000.00f,
+                    description = "Single", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "A", sequence = 3, display = "HF", dependents = 0, exemption = 37500.00f,
+                    description = "Head of the family", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "A", sequence = 4, display = "ME", dependents = 0, exemption = 41000.00f,
+                    description = "Married", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "B", sequence = 1, display = "HF1", dependents = 1, exemption = 54000.00f,
+                    description = "Head of the family with one (1) dependent", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "B", sequence = 2, display = "HF2", dependents = 2, exemption = 70500.00f,
+                    description = "Head of the family with two (2) dependents", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "B", sequence = 3, display = "HF3", dependents = 3, exemption = 87000.00f,
+                    description = "Head of the family with three (3) dependents", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "B", sequence = 4, display = "HF4", dependents = 4, exemption = 103500.00f,
+                    description = "Head of the family with four (4) dependents", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "C", sequence = 1, display = "ME1", dependents = 1, exemption = 57500.00f,
+                    description = "Married with one (1) dependent", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "C", sequence = 2, display = "ME2", dependents = 2, exemption = 74000.00f,
+                    description = "Married with two (2) dependents", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "C", sequence = 3, display = "ME3", dependents = 3, exemption = 90500.00f,
+                    description = "Married with three (3) dependents", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "C", sequence = 4, display = "ME4", dependents = 4, exemption = 107000.00f,
+                    description = "Married with four (4) dependents", is_active = true, remarks = "Applicable up to year 2008 only", year_end = 2008 },
+                new tax_codes { group = "A", sequence = 1, display = "Z", dependents = 0, exemption = 0.00f,
+                    description = "Zero Exemption", is_active = true, remarks = "Applicable from year 2009 up to current, zero exemption (for employees multiple employers for their ", year_end = null },
+                new tax_codes { group = "A", sequence = 2, display = "S", dependents = 0, exemption = 50000.00f,
+                    description = "Single", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "A", sequence = 3, display = "M", dependents = 0, exemption = 50000.00f,
+                    description = "Married", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 1, display = "S1", dependents = 1, exemption = 75000.00f,
+                    description = "Single with one (1) qualified dependent child", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 2, display = "S2", dependents = 2, exemption = 100000.00f,
+                    description = "Single with two (2) qualified dependent children", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 3, display = "S3", dependents = 3, exemption = 125000.00f,
+                    description = "Single with three (3) qualified dependent children", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 4, display = "S4", dependents = 4, exemption = 150000.00f,
+                    description = "Single with four (4) qualified dependent children", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 5, display = "M1", dependents = 1, exemption = 75000.00f,
+                    description = "Married with one (1) qualified dependent child", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 6, display = "M2", dependents = 2, exemption = 100000.00f,
+                    description = "Married with two (2) qualified dependent children", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 7, display = "M3", dependents = 3, exemption = 125000.00f,
+                    description = "Married with three (3) qualified dependent children", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+                new tax_codes { group = "B", sequence = 8, display = "M4", dependents = 4, exemption = 150000.00f,
+                    description = "Married with four (4) qualified dependent children", is_active = true, remarks = "Applicable from year 2009 up to current", year_end = null },
+            };
+
+            foreach (tax_codes s in taxCodes)
+            {
+                context.tax_codes.Add(s);
+            }
+
+            var gender = new genders[]
+            {
+               new genders { display = "M", name = "Male" },
+               new genders { display = "F", name = "Female" }
+            };
+
+            foreach (genders s in gender)
+            {
+                context.genders.Add(s);
+            }
+
+            var addressTypes = new address_types[]
+            {
+               new address_types { name = "Registered Address" },
+               new address_types { name = "Local Address" }
+            };
+
+            foreach (address_types s in addressTypes)
+            {
+                context.address_types.Add(s);
+            }
+
             context.SaveChanges();
 
             //var enrollments = new Enrollment[]

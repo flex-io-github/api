@@ -91,6 +91,8 @@ namespace WebApi.Entities
 		public DbSet<Entities.sss> sss { get; set; }
 		public DbSet<Entities.philhealth> philhealth { get; set; }
 		public DbSet<Entities.philhealth_ver2> philhealth_ver2 { get; set; }
+		public DbSet<Entities.genders> genders { get; set; }
+		public DbSet<Entities.address_types> address_types { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

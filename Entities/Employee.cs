@@ -119,6 +119,10 @@ namespace WebApi.Entities
         public DateTime? contract_start_date { get; set; }
         public DateTime? contract_end_date { get; set; }
         public int? payout_type_id { get; set; }
+        public int? tax_code_id { get; set; }
+        public int? bank_account_id { get; set; }
+        public int? bank_account_type_id { get; set; }
+        public string bank_account_number { get; set; }
         
         //[Required]
         public int created_by_id { get; set; }

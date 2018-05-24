@@ -139,6 +139,10 @@ namespace WebApi
             entity.contract_start_date = value.contract_start_date;
             entity.contract_end_date = value.contract_end_date;
             entity.payout_type_id = value.payout_type_id;
+            entity.tax_code_id = value.tax_code_id;
+            entity.bank_account_id = value.bank_account_id;
+            entity.bank_account_type_id = value.bank_account_type_id;
+            entity.bank_account_number = value.bank_account_number;
             dbContext.SaveChanges();
             return entity;
         }
